@@ -90,7 +90,7 @@ namespace ProjectBase
         /// <param name="eventName"></param>
         public void EventTrigger<T>(string eventName, T info)
         {
-            if(m_eventDic.ContainsKey(eventName))
+            if(m_eventDic.ContainsKey(eventName) && (m_eventDic[eventName] as EventInfo<T>).actions != null)
             {
                 (m_eventDic[eventName] as EventInfo<T>).actions.Invoke(info);
             }
@@ -98,7 +98,7 @@ namespace ProjectBase
 
         public void EventTrigger(string eventName)
         {
-            if (m_eventDic.ContainsKey(eventName))
+            if (m_eventDic.ContainsKey(eventName) && (m_eventDic[eventName] as EventInfo).actions != null)
             {
                 (m_eventDic[eventName] as EventInfo).actions.Invoke();
             }
