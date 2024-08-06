@@ -6,29 +6,6 @@ using UnityEngine;
 
 namespace ProjectBase
 {
-    public class dataClass
-    {
-        int var1;
-        int var2;
-        int var3;
-    }
-
-    public class PlayerInfo
-    {
-        public PlayerInfo()
-        {
-
-        }
-
-        public int hp;
-        public int ep;
-        public float exp;
-        public string name;
-        public List<int> lists = new List<int>();
-        public Dictionary<int, string> infos = new Dictionary<int, string>();
-        public List<dataClass> playerInfos = new List<dataClass>();
-    }
-
     /// <summary>
     /// 定义一个key规则，keyName_数据类型_字段类型_字段名
     /// 对于List 则是 keyName_数据类型_List_字段名 表示 list.Count  其后加index表示元素
